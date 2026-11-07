@@ -1,0 +1,804 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+  <title>星空影视-热播剧集_高清电影_在线观看推荐</title>
+  <meta name="description" content="星空影视汇聚热播剧集、高清电影与经典纪录片，提供最新上线、口碑榜单、深度解析与追剧指南，适合影视爱好者发现与收藏优质内容。">
+  <meta name="keywords" content="星空影视,热播剧集,高清电影,影视推荐,在线观看">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230b1e3b'/%3E%3Cpath d='M20 20h24v6H20zm0 10h18v6H20zm0 10h24v6H20z' fill='%23f5c542'/%3E%3Ccircle cx='48' cy='16' r='6' fill='%2333d6f5'/%3E%3C/svg%3E">
+  <style>
+    :root {
+      --bg-deep: #0b1e3b;
+      --bg-card: #112b4f;
+      --bg-card-2: #17365f;
+      --text-main: #f0f4fc;
+      --text-sub: #a9c2e8;
+      --accent: #f5c542;
+      --accent-2: #33d6f5;
+      --accent-3: #ff7e5f;
+      --border-soft: rgba(255,255,255,0.08);
+      --shadow: 0 12px 30px rgba(0,0,0,0.35);
+      --radius: 18px;
+      --max-w: 1200px;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      background: var(--bg-deep);
+      color: var(--text-main);
+      line-height: 1.6;
+      font-size: 16px;
+      background-image: radial-gradient(circle at 20% 0%, #1a3666 0%, #0b1e3b 60%);
+    }
+    a { color: inherit; text-decoration: none; }
+    ul { list-style: none; }
+    .wrap {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    /* 顶部导航 */
+    .sky-header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(11,30,59,0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border-soft);
+    }
+    .sky-nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 68px;
+    }
+    .sky-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 800;
+      font-size: 1.35rem;
+      letter-spacing: 0.5px;
+    }
+    .sky-logo-mark {
+      width: 38px;
+      height: 38px;
+      border-radius: 10px;
+      background: linear-gradient(135deg, var(--accent), var(--accent-3));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      color: #0b1e3b;
+      font-weight: 900;
+    }
+    .sky-logo span { color: var(--accent); }
+    .sky-menu {
+      display: flex;
+      gap: 26px;
+      font-size: 0.95rem;
+      color: var(--text-sub);
+    }
+    .sky-menu a:hover { color: var(--accent); }
+    .nav-actions {
+      display: flex;
+      gap: 12px;
+    }
+    .btn-soft {
+      padding: 8px 18px;
+      border-radius: 30px;
+      background: rgba(245,197,66,0.12);
+      color: var(--accent);
+      font-weight: 600;
+      font-size: 0.9rem;
+      border: 1px solid rgba(245,197,66,0.3);
+      transition: 0.2s;
+    }
+    .btn-soft:hover { background: rgba(245,197,66,0.25); }
+    /* Hero */
+    .hero-sec {
+      padding: 42px 0 30px;
+    }
+    .hero-inner {
+      display: flex;
+      flex-direction: column;
+      gap: 26px;
+      background: linear-gradient(135deg, #112b4f 0%, #0e2242 100%);
+      border-radius: 32px;
+      padding: 44px 42px;
+      border: 1px solid var(--border-soft);
+      box-shadow: var(--shadow);
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-inner::after {
+      content: '';
+      position: absolute;
+      right: -60px;
+      top: -60px;
+      width: 280px;
+      height: 280px;
+      background: radial-gradient(circle, rgba(51,214,245,0.18) 0%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+    .hero-h1 {
+      font-size: 2.6rem;
+      font-weight: 800;
+      line-height: 1.25;
+      max-width: 760px;
+    }
+    .hero-h1 em {
+      font-style: normal;
+      background: linear-gradient(90deg, var(--accent), #ffe08a);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    .hero-desc {
+      color: var(--text-sub);
+      max-width: 640px;
+      font-size: 1.05rem;
+    }
+    .hero-search {
+      display: flex;
+      max-width: 520px;
+      background: rgba(255,255,255,0.07);
+      border-radius: 60px;
+      padding: 6px;
+      border: 1px solid rgba(255,255,255,0.12);
+    }
+    .hero-search input {
+      flex: 1;
+      background: transparent;
+      border: none;
+      outline: none;
+      padding: 12px 20px;
+      color: var(--text-main);
+      font-size: 1rem;
+    }
+    .hero-search input::placeholder { color: #7e9bc0; }
+    .hero-search button {
+      background: var(--accent);
+      color: #0b1e3b;
+      border: none;
+      border-radius: 60px;
+      padding: 0 30px;
+      font-weight: 700;
+      cursor: pointer;
+      font-size: 0.95rem;
+      transition: 0.2s;
+    }
+    .hero-search button:hover { background: #ffd966; }
+    .hero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .hero-tags a {
+      background: rgba(255,255,255,0.06);
+      padding: 6px 18px;
+      border-radius: 30px;
+      font-size: 0.9rem;
+      color: var(--text-sub);
+      border: 1px solid var(--border-soft);
+      transition: 0.2s;
+    }
+    .hero-tags a:hover { background: var(--accent); color: #0b1e3b; }
+    /* 通用 section */
+    .sec {
+      padding: 36px 0;
+    }
+    .sec-head {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      margin-bottom: 24px;
+      border-left: 4px solid var(--accent);
+      padding-left: 16px;
+    }
+    .sec-head h2 {
+      font-size: 1.7rem;
+      font-weight: 700;
+    }
+    .sec-head .more {
+      color: var(--accent-2);
+      font-size: 0.95rem;
+    }
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 22px;
+    }
+    .movie-card {
+      background: var(--bg-card);
+      border-radius: var(--radius);
+      padding: 18px;
+      border: 1px solid var(--border-soft);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      transition: transform 0.2s, box-shadow 0.2s;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .movie-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 34px rgba(0,0,0,0.5);
+      border-color: rgba(245,197,66,0.35);
+    }
+    .card-cover {
+      height: 140px;
+      border-radius: 12px;
+      background: linear-gradient(145deg, #1f3f6e, #0f2544);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.4rem;
+      color: var(--accent-2);
+      position: relative;
+      overflow: hidden;
+    }
+    .card-cover span {
+      background: rgba(0,0,0,0.3);
+      padding: 4px 14px;
+      border-radius: 30px;
+      font-size: 0.8rem;
+      color: #fff;
+      position: absolute;
+      bottom: 10px;
+      left: 10px;
+    }
+    .card-title {
+      font-weight: 700;
+      font-size: 1.05rem;
+      line-height: 1.4;
+    }
+    .card-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+    .card-tags span {
+      background: rgba(51,214,245,0.12);
+      color: var(--accent-2);
+      padding: 2px 10px;
+      border-radius: 30px;
+      font-size: 0.75rem;
+    }
+    .card-desc {
+      color: var(--text-sub);
+      font-size: 0.88rem;
+      line-height: 1.5;
+      flex: 1;
+    }
+    .card-meta {
+      display: flex;
+      justify-content: space-between;
+      color: #7e9bc0;
+      font-size: 0.8rem;
+      border-top: 1px dashed var(--border-soft);
+      padding-top: 10px;
+      margin-top: 4px;
+    }
+    .update-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .update-item {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      background: var(--bg-card-2);
+      padding: 16px 20px;
+      border-radius: 14px;
+      border: 1px solid var(--border-soft);
+    }
+    .update-time {
+      color: var(--accent);
+      font-weight: 600;
+      font-size: 0.85rem;
+      min-width: 80px;
+    }
+    .update-text {
+      flex: 1;
+      font-size: 0.95rem;
+    }
+    .update-text strong { color: #fff; }
+    .update-tag {
+      background: rgba(245,197,66,0.15);
+      color: var(--accent);
+      padding: 2px 12px;
+      border-radius: 30px;
+      font-size: 0.75rem;
+    }
+    /* 分类入口 */
+    .cat-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+      gap: 14px;
+    }
+    .cat-item {
+      background: var(--bg-card);
+      padding: 18px 10px;
+      text-align: center;
+      border-radius: 16px;
+      border: 1px solid var(--border-soft);
+      font-weight: 600;
+      color: var(--text-sub);
+      transition: 0.2s;
+    }
+    .cat-item:hover {
+      background: var(--accent);
+      color: #0b1e3b;
+      border-color: var(--accent);
+    }
+    /* 深度解析 */
+    .deep-wrap {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 30px;
+      align-items: start;
+    }
+    .deep-text {
+      background: var(--bg-card);
+      padding: 30px;
+      border-radius: var(--radius);
+      border: 1px solid var(--border-soft);
+      line-height: 1.8;
+      color: #d7e3f7;
+      font-size: 0.98rem;
+    }
+    .deep-text h3 {
+      color: var(--accent);
+      font-size: 1.2rem;
+      margin: 18px 0 8px;
+    }
+    .deep-text p { margin-bottom: 14px; }
+    .deep-aside {
+      background: var(--bg-card-2);
+      border-radius: var(--radius);
+      padding: 24px;
+      border: 1px solid var(--border-soft);
+    }
+    .deep-aside h4 {
+      color: var(--accent-2);
+      margin-bottom: 14px;
+      font-size: 1.1rem;
+    }
+    .deep-aside li {
+      padding: 10px 0;
+      border-bottom: 1px solid var(--border-soft);
+      color: var(--text-sub);
+      font-size: 0.9rem;
+    }
+    .deep-aside li:last-child { border: none; }
+    /* FAQ */
+    .faq-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    .faq-item {
+      background: var(--bg-card);
+      border-radius: 14px;
+      padding: 20px 22px;
+      border: 1px solid var(--border-soft);
+    }
+    .faq-q {
+      font-weight: 700;
+      color: var(--accent);
+      margin-bottom: 8px;
+      font-size: 1rem;
+    }
+    .faq-a {
+      color: var(--text-sub);
+      font-size: 0.9rem;
+      line-height: 1.7;
+    }
+    /* 评论 */
+    .comment-stream {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    .comment-item {
+      display: flex;
+      gap: 14px;
+      background: var(--bg-card);
+      padding: 16px 20px;
+      border-radius: 14px;
+      border: 1px solid var(--border-soft);
+      align-items: flex-start;
+    }
+    .avatar {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #1f4b7a, #0e2b4a);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      color: var(--accent);
+      font-size: 1rem;
+      flex-shrink: 0;
+    }
+    .comment-body { flex: 1; }
+    .comment-name {
+      font-weight: 600;
+      font-size: 0.9rem;
+      display: flex;
+      gap: 10px;
+      align-items: baseline;
+    }
+    .comment-name span {
+      font-weight: 400;
+      color: #7e9bc0;
+      font-size: 0.75rem;
+    }
+    .comment-text {
+      color: var(--text-sub);
+      font-size: 0.9rem;
+      margin-top: 4px;
+    }
+    /* 资讯 */
+    .news-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 18px;
+    }
+    .news-card {
+      background: var(--bg-card-2);
+      padding: 22px;
+      border-radius: 16px;
+      border: 1px solid var(--border-soft);
+    }
+    .news-date {
+      color: var(--accent-2);
+      font-size: 0.8rem;
+      margin-bottom: 6px;
+    }
+    .news-title {
+      font-weight: 700;
+      margin-bottom: 8px;
+      font-size: 1rem;
+    }
+    .news-sum {
+      color: var(--text-sub);
+      font-size: 0.85rem;
+      line-height: 1.6;
+    }
+    /* 页脚 */
+    .sky-footer {
+      margin-top: 40px;
+      border-top: 1px solid var(--border-soft);
+      padding: 40px 0 30px;
+      background: rgba(0,0,0,0.2);
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 30px;
+    }
+    .footer-col h5 {
+      color: var(--accent);
+      margin-bottom: 12px;
+      font-size: 0.95rem;
+    }
+    .footer-col p, .footer-col li {
+      color: var(--text-sub);
+      font-size: 0.85rem;
+      line-height: 1.8;
+    }
+    .footer-bottom {
+      margin-top: 30px;
+      padding-top: 20px;
+      border-top: 1px solid var(--border-soft);
+      text-align: center;
+      color: #6b87ad;
+      font-size: 0.8rem;
+    }
+    /* 响应式 */
+    @media (max-width: 900px) {
+      .deep-wrap { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+      .hero-h1 { font-size: 2rem; }
+      .sky-menu { display: none; }
+    }
+    @media (max-width: 600px) {
+      .hero-inner { padding: 28px 20px; }
+      .hero-h1 { font-size: 1.7rem; }
+      .faq-list { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .card-grid { grid-template-columns: 1fr; }
+      .hero-search { flex-direction: column; background: transparent; gap: 10px; }
+      .hero-search input { background: rgba(255,255,255,0.07); border-radius: 60px; }
+      .hero-search button { padding: 12px; border-radius: 60px; }
+    }
+  </style>
+</head>
+<body>
+  <!-- 导航 -->
+  <header class="sky-header">
+    <div class="wrap sky-nav">
+      <a href="/" class="sky-logo">
+        <span class="sky-logo-mark">✦</span>
+        星空<span>影视</span>
+      </a>
+      <nav class="sky-menu">
+        <a href="/#hot-sec">热播推荐</a>
+        <a href="/#update-sec">最新更新</a>
+        <a href="/#deep-sec">深度解析</a>
+        <a href="/#faq-sec">常见问题</a>
+        <a href="/#news-sec">影视资讯</a>
+      </nav>
+      <div class="nav-actions">
+        <a href="/#subscribe" class="btn-soft">收藏专题</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- 首屏 -->
+    <section class="hero-sec">
+      <div class="wrap">
+        <div class="hero-inner">
+          <h1 class="hero-h1"><em>星空影视</em>：热播剧集与高清电影在线推荐专题</h1>
+          <p class="hero-desc">汇集近期高分剧集、院线电影、经典纪录片与热门综艺，提供可收藏的观看指南与深度解析。从类型筛选到口碑榜单，帮你快速找到今晚想看的内容。</p>
+          <div class="hero-search">
+            <input type="text" placeholder="搜索剧名、演员或导演…" aria-label="搜索影视内容">
+            <button type="button">搜一搜</button>
+          </div>
+          <div class="hero-tags">
+            <a href="/#hot-sec">热播剧集</a>
+            <a href="/#update-sec">今日更新</a>
+            <a href="/#deep-sec">深度解析</a>
+            <a href="/#cat-sec">类型分类</a>
+            <a href="/#faq-sec">观看指南</a>
+            <a href="/#comment-sec">观众评论</a>
+            <a href="/#news-sec">影视资讯</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 热门推荐 -->
+    <section id="hot-sec" class="sec">
+      <div class="wrap">
+        <div class="sec-head">
+          <h2>热门推荐 · 星空影视本周精选</h2>
+          <a href="/#hot-sec" class="more">查看全部 →</a>
+        </div>
+        <div class="card-grid">
+          <div class="movie-card">
+            <div class="card-cover">🎬<span>热播</span></div>
+            <div class="card-title">《暗夜追光》第一季</div>
+            <div class="card-tags"><span>悬疑</span><span>刑侦</span><span>2026</span></div>
+            <div class="card-desc">一桩连环失踪案牵出十五年前的旧案，节奏紧凑，双线叙事让人欲罢不能。第8集已更新。</div>
+            <div class="card-meta"><span>⭐ 9.2</span><span>更新至08集</span></div>
+          </div>
+          <div class="movie-card">
+            <div class="card-cover">🌌<span>科幻</span></div>
+            <div class="card-title">《星际归途》</div>
+            <div class="card-tags"><span>科幻</span><span>冒险</span><span>IMAX</span></div>
+            <div class="card-desc">年度硬核科幻巨制，讲述深空探测队穿越虫洞后的生存抉择，视觉与配乐均为顶级水准。</div>
+            <div class="card-meta"><span>⭐ 9.0</span><span>电影 · 128分钟</span></div>
+          </div>
+          <div class="movie-card">
+            <div class="card-cover">🏯<span>古装</span></div>
+            <div class="card-title">《长风渡》第二季</div>
+            <div class="card-tags"><span>古装</span><span>权谋</span><span>大IP</span></div>
+            <div class="card-desc">原班人马回归，权谋线全面升级。服化道精致，朝堂博弈与江湖恩怨双线并进。</div>
+            <div class="card-meta"><span>⭐ 8.8</span><span>更新至12集</span></div>
+          </div>
+          <div class="movie-card">
+            <div class="card-cover">😂<span>喜剧</span></div>
+            <div class="card-title">《周末不加班》</div>
+            <div class="card-tags"><span>都市</span><span>喜剧</span><span>下饭</span></div>
+            <div class="card-desc">三个都市打工人周末的荒诞冒险，轻松解压，笑点密集，适合下饭和睡前放松。</div>
+            <div class="card-meta"><span>⭐ 8.5</span><span>全16集</span></div>
+          </div>
+          <div class="movie-card">
+            <div class="card-cover">🌊<span>纪录片</span></div>
+            <div class="card-title">《蓝色星球·深海篇》</div>
+            <div class="card-tags"><span>自然</span><span>BBC</span><span>4K</span></div>
+            <div class="card-desc">时隔五年推出的深海特辑，拍摄到多种罕见生物行为，画面震撼，适合全家观看。</div>
+            <div class="card-meta"><span>⭐ 9.6</span><span>全6集</span></div>
+          </div>
+          <div class="movie-card">
+            <div class="card-cover">🎭<span>剧情</span></div>
+            <div class="card-title">《小城之春2026》</div>
+            <div class="card-tags"><span>文艺</span><span>剧情</span><span>获奖</span></div>
+            <div class="card-desc">平遥影展最佳影片，细腻刻画小城三代人的情感纠葛，台词克制，余味悠长。</div>
+            <div class="card-meta"><span>⭐ 8.9</span><span>电影 · 112分钟</span></div>
+          </div>
+          <div class="movie-card">
+            <div class="card-cover">🔥<span>综艺</span></div>
+            <div class="card-title">《跨界歌手2026》</div>
+            <div class="card-tags"><span>音乐</span><span>竞技</span><span>直播</span></div>
+            <div class="card-desc">演员跨界挑战歌手身份，每期直播全开麦，赛制残酷，话题度持续走高。</div>
+            <div class="card-meta"><span>⭐ 8.3</span><span>每周六更新</span></div>
+          </div>
+          <div class="movie-card">
+            <div class="card-cover">🕵️<span>谍战</span></div>
+            <div class="card-title">《风声再起》</div>
+            <div class="card-tags"><span>谍战</span><span>烧脑</span><span>老戏骨</span></div>
+            <div class="card-desc">1940年代上海滩，多方势力角力。剧本扎实，反转不断，配角全员演技在线。</div>
+            <div class="card-meta"><span>⭐ 8.7</span><span>更新至20集</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 最新更新 -->
+    <section id="update-sec" class="sec">
+      <div class="wrap">
+        <div class="sec-head">
+          <h2>最新更新 · 今日追更动态</h2>
+          <span class="more">2026-11-07 更新</span>
+        </div>
+        <div class="update-list">
+          <div class="update-item"><span class="update-time">10:30</span><span class="update-text"><strong>《暗夜追光》</strong>第8集已上线，关键证人现身，案件迎来重大转折。</span><span class="update-tag">剧集</span></div>
+          <div class="update-item"><span class="update-time">11:00</span><span class="update-text"><strong>《长风渡》第二季</strong>第12集会员抢先看，朝堂线进入高潮。</span><span class="update-tag">古装</span></div>
+          <div class="update-item"><span class="update-time">12:15</span><span class="update-text"><strong>《周末不加班》</strong>全16集已完结，适合一次性刷完的轻松喜剧。</span><span class="update-tag">完结</span></div>
+          <div class="update-item"><span class="update-time">14:00</span><span class="update-text"><strong>《星际归途》</strong>4K杜比视界版本上线星空影视专题页。</span><span class="update-tag">电影</span></div>
+          <div class="update-item"><span class="update-time">15:30</span><span class="update-text"><strong>《蓝色星球·深海篇》</strong>第4集“深渊之光”更新，记录深海生物发光现象。</span><span class="update-tag">纪录片</span></div>
+          <div class="update-item"><span class="update-time">17:00</span><span class="update-text"><strong>《跨界歌手2026》</strong>今晚20:00直播，补位歌手揭晓。</span><span class="update-tag">直播</span></div>
+          <div class="update-item"><span class="update-time">18:20</span><span class="update-text"><strong>《风声再起》</strong>第20集上线，主角身份面临暴露危机。</span><span class="update-tag">谍战</span></div>
+          <div class="update-item"><span class="update-time">19:00</span><span class="update-text"><strong>《小城之春2026》</strong>导演评论音轨版上线，解析长镜头调度。</span><span class="update-tag">电影</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 分类入口 -->
+    <section id="cat-sec" class="sec">
+      <div class="wrap">
+        <div class="sec-head"><h2>类型分类 · 按喜好筛选</h2></div>
+        <div class="cat-grid">
+          <a href="/#hot-sec" class="cat-item">悬疑刑侦</a>
+          <a href="/#hot-sec" class="cat-item">古装权谋</a>
+          <a href="/#hot-sec" class="cat-item">科幻冒险</a>
+          <a href="/#hot-sec" class="cat-item">都市喜剧</a>
+          <a href="/#hot-sec" class="cat-item">自然纪录</a>
+          <a href="/#hot-sec" class="cat-item">文艺剧情</a>
+          <a href="/#hot-sec" class="cat-item">音乐综艺</a>
+          <a href="/#hot-sec" class="cat-item">谍战烧脑</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 深度解析 -->
+    <section id="deep-sec" class="sec">
+      <div class="wrap">
+        <div class="sec-head"><h2>深度解析 · 星空影视内容观察</h2></div>
+        <div class="deep-wrap">
+          <div class="deep-text">
+            <p>星空影视专题页围绕“类型化内容消费”构建，核心不是简单罗列片名，而是帮助观众在有限时间内找到符合当下情绪与场景的影视作品。从近期热度来看，悬疑刑侦与古装权谋依然占据主流，但科幻与纪录片的长尾需求增长明显，尤其是15-35岁用户群体对高信息密度和强视觉体验的内容更为敏感。</p>
+            <h3>类型融合成为新趋势</h3>
+            <p>以《暗夜追光》为例，它把刑侦主线与家庭伦理暗线交织，每集结尾保留钩子，适合追更型观众。而《星际归途》则用硬科幻外壳包裹情感内核，使得非硬核科幻迷也能进入故事。星空影视在推荐逻辑上，优先呈现“高完成度”的作品——即剧本、表演、视听至少两项达到优良水准，避免浪费观众时间。</p>
+            <h3>观看节奏与场景适配</h3>
+            <p>我们建议按场景选择内容：下饭或碎片时间适合《周末不加班》这类单集30分钟的轻喜剧；深度沉浸可选《小城之春2026》或《蓝色星球·深海篇》；而《长风渡》第二季与《风声再起》则需要连续观看才能体会伏笔与反转。星空影视的卡片标签中已标注“更新状态”“评分”“时长”等维度，方便快速决策。</p>
+            <h3>为什么值得收藏这个专题</h3>
+            <p>本页将持续追踪2026年第四季度的热播剧集与高分电影，每周更新榜单与深度解析，并提供常见问题答疑。你不需要在多个平台间反复切换，星空影视专题页把“发现—筛选—了解—收藏”的路径压缩在一页内，同时保留真实观众评论与编辑手记，兼顾效率与参考价值。</p>
+          </div>
+          <aside class="deep-aside">
+            <h4>编辑手记</h4>
+            <ul>
+              <li>本周悬疑类涨幅最高，《暗夜追光》弹幕互动量第一。</li>
+              <li>纪录片《蓝色星球·深海篇》4K版回看率突出。</li>
+              <li>古装剧观众更关注服化道与原著还原度。</li>
+              <li>综艺直播时段弹幕峰值出现在21:15。</li>
+              <li>科幻电影观众偏好“技术参数”与“幕后制作”。</li>
+            </ul>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq-sec" class="sec">
+      <div class="wrap">
+        <div class="sec-head"><h2>常见问题 · 观看与选择指南</h2></div>
+        <div class="faq-list">
+          <div class="faq-item"><div class="faq-q">星空影视专题页主要推荐哪些类型？</div><div class="faq-a">覆盖悬疑刑侦、古装权谋、科幻冒险、都市喜剧、自然纪录片、文艺电影、音乐综艺与谍战剧。每周根据热度和口碑动态调整，兼顾大众流行与小众高分。</div></div>
+          <div class="faq-item"><div class="faq-q">第一次浏览应该从哪个板块开始？</div><div class="faq-a">建议先看“热门推荐”了解当前高热度作品，再通过“最新更新”确认追更状态。如果你有明确偏好，可直接使用“类型分类”筛选，或者查看“深度解析”了解编辑的选片逻辑。</div></div>
+          <div class="faq-item"><div class="faq-q">《暗夜追光》和《风声再起》哪部更烧脑？</div><div class="faq-a">《风声再起》属于谍战群像，人物关系复杂、反转密集，需要较高专注度；《暗夜追光》以刑侦单元推进，主线清晰，更适合边看边推理。两者都有大量伏笔，建议连续观看。</div></div>
+          <div class="faq-item"><div class="faq-q">纪录片适合孩子一起看吗？</div><div class="faq-a">《蓝色星球·深海篇》画面优美、解说通俗，适合亲子共同观看，但部分深海捕食镜头可能对低龄儿童有轻微冲击，建议家长提前预览或陪同讲解。</div></div>
+          <div class="faq-item"><div class="faq-q">专题页的评分和评论是真实的吗？</div><div class="faq-a">评分综合了编辑评分与观众反馈，评论来自社区用户投稿，保留正面与中性评价。我们不会删除合理吐槽，目的是提供有参考价值的观看决策信息。</div></div>
+          <div class="faq-item"><div class="faq-q">后续会更新更多老片修复版吗？</div><div class="faq-a">会。星空影视专题页计划在2026年12月增加“经典修复”栏目，涵盖4K修复的华语老电影与纪录片，具体上线时间请关注资讯板块。</div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 评论 -->
+    <section id="comment-sec" class="sec">
+      <div class="wrap">
+        <div class="sec-head"><h2>观众评论 · 真实追剧反馈</h2><span class="more">精选近30天</span></div>
+        <div class="comment-stream">
+          <div class="comment-item"><div class="avatar">追</div><div class="comment-body"><div class="comment-name">追剧小分队 <span>11-06</span></div><div class="comment-text">《暗夜追光》第7集结尾那个反转真的没想到，编剧埋线太深了，现在每周就等这一部。</div></div></div>
+          <div class="comment-item"><div class="avatar">星</div><div class="comment-body"><div class="comment-name">星野漫步 <span>11-05</span></div><div class="comment-text">《星际归途》的配乐值得单独夸，太空舱内那段长镜头我反复看了三遍。科幻迷必看。</div></div></div>
+          <div class="comment-item"><div class="avatar">古</div><div class="comment-body"><div class="comment-name">古装控阿黎 <span>11-05</span></div><div class="comment-text">《长风渡》第二季服化道比第一季还精致，但权谋线节奏稍微有点慢，希望后面能快起来。</div></div></div>
+          <div class="comment-item"><div class="avatar">下</div><div class="comment-body"><div class="comment-name">下饭第一名 <span>11-04</span></div><div class="comment-text">《周末不加班》太适合吃饭看了，每集20多分钟，笑点不尴尬，已经安利给同事。</div></div></div>
+          <div class="comment-item"><div class="avatar">深</div><div class="comment-body"><div class="comment-name">深海蓝鲸 <span>11-04</span></div><div class="comment-text">蓝色星球新一季画质绝了，深海那集像看科幻片，孩子问了好多问题，顺便科普。</div></div></div>
+          <div class="comment-item"><div class="avatar">谍</div><div class="comment-body"><div class="comment-name">谍战迷老周 <span>11-03</span></div><div class="comment-text">《风声再起》老戏骨对戏过瘾，但年轻演员有些场景接不住，整体瑕不掩瑜。</div></div></div>
+          <div class="comment-item"><div class="avatar">独</div><div class="comment-body"><div class="comment-name">独立电影人 <span>11-03</span></div><div class="comment-text">《小城之春2026》排片太少了，幸好专题页有导演评论版，长镜头调度值得拉片学习。</div></div></div>
+          <div class="comment-item"><div class="avatar">音</div><div class="comment-body"><div class="comment-name">音乐盒 <span>11-02</span></div><div class="comment-text">跨界歌手这季请的演员唱功比预想好，直播全开麦很勇，就是赛制有点复杂。</div></div></div>
+          <div class="comment-item"><div class="avatar">路</div><div class="comment-body"><div class="comment-name">路人甲 <span>11-02</span></div><div class="comment-text">专题页的分类挺清楚的，但希望增加“按平台”筛选，有时候找特定平台的剧不太方便。</div></div></div>
+          <div class="comment-item"><div class="avatar">夜</div><div class="comment-body"><div class="comment-name">夜猫子小K <span>11-01</span></div><div class="comment-text">《暗夜追光》和《风声再起》我都在追，一个现代一个民国，换着看不会串戏。</div></div></div>
+          <div class="comment-item"><div class="avatar">蓝</div><div class="comment-body"><div class="comment-name">蓝色多瑙河 <span>10-31</span></div><div class="comment-text">纪录片那几部建议增加“适合年龄”标签，方便家长快速判断。</div></div></div>
+          <div class="comment-item"><div class="avatar">评</div><div class="comment-body"><div class="comment-name">评分控 <span>10-30</span></div><div class="comment-text">专题页评分和豆瓣略有差异，但参考维度更多，有编辑短评，适合快速决策。</div></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 资讯 -->
+    <section id="news-sec" class="sec">
+      <div class="wrap">
+        <div class="sec-head"><h2>影视资讯 · 行业动态与上线预告</h2><span class="more">2026年11月</span></div>
+        <div class="news-grid">
+          <div class="news-card"><div class="news-date">2026-11-07</div><div class="news-title">《暗夜追光》第一季确认加更，结局提前一周</div><div class="news-sum">平台宣布为回应观众热情，最后三集将提前上线，同时制作组透露第二季已在剧本阶段。</div></div>
+          <div class="news-card"><div class="news-date">2026-11-06</div><div class="news-title">《星际归途》密钥延期，IMAX排片持续到12月</div><div class="news-sum">由于口碑强劲，影片将延长上映至12月中旬，并新增杜比影院版本。</div></div>
+          <div class="news-card"><div class="news-date">2026-11-05</div><div class="news-title">《长风渡》第二季原著作者参与编剧，名场面还原获赞</div><div class="news-sum">作者亲自下场调整关键台词，观众评价“书粉过年”，但支线改编仍有争议。</div></div>
+          <div class="news-card"><div class="news-date">2026-11-04</div><div class="news-title">《蓝色星球·深海篇》创纪录片频道年度收视纪录</div><div class="news-sum">第4集“深渊之光”播出后，相关短视频播放量破亿，带动专题页访问量上涨。</div></div>
+          <div class="news-card"><div class="news-date">2026-11-03</div><div class="news-title">《小城之春2026》上线导演评论音轨，解析长镜头美学</div><div class="news-sum">导演与摄影指导共同录制评论音轨，详细讲述片中三个长镜头的调度思路。</div></div>
+          <div class="news-card"><div class="news-date">2026-11-02</div><div class="news-title">《跨界歌手2026》补位歌手公布，直播赛制升级</div><div class="news-sum">节目组宣布新增“观众实时投票”环节，补位歌手为资深音乐剧演员，本周六直播。</div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 订阅 -->
+    <section id="subscribe" class="sec">
+      <div class="wrap">
+        <div class="hero-inner" style="padding:30px 36px;flex-direction:row;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;">
+          <div>
+            <h2 style="font-size:1.5rem;margin-bottom:4px;">订阅星空影视专题</h2>
+            <p style="color:var(--text-sub);font-size:0.95rem;">每周接收热播榜单与深度解析，不错过下一部好剧。</p>
+          </div>
+          <a href="/#subscribe" class="btn-soft" style="padding:12px 32px;">免费订阅更新</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- 页脚 -->
+  <footer class="sky-footer">
+    <div class="wrap">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h5>星空影视</h5>
+          <p>一个专注于影视内容发现与推荐的专题页面，提供热播剧集、高清电影、纪录片与综艺的观看参考。所有内容基于公开信息与编辑观察，不代表平台立场。</p>
+        </div>
+        <div class="footer-col">
+          <h5>快速导航</h5>
+          <ul>
+            <li><a href="/#hot-sec">热门推荐</a></li>
+            <li><a href="/#update-sec">最新更新</a></li>
+            <li><a href="/#deep-sec">深度解析</a></li>
+            <li><a href="/#faq-sec">常见问题</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>友情链接</h5>
+          <ul>
+            <li><a href="/#">影视资料库</a></li>
+            <li><a href="/#">剧集时间表</a></li>
+            <li><a href="/#">观影指南</a></li>
+            <li><a href="/#">纪录片之家</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>免责声明</h5>
+          <p>本站为影视内容推荐专题页，所有片名、评分、更新状态均为模拟展示，不提供在线播放资源。内容仅供参考，请支持正版影视作品。</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        © 2026 星空影视专题 · 内容推荐与整理 · 页面数据模拟展示 ｜ 收藏本页，随时发现好剧
+      </div>
+    </div>
+  </footer>
+
+  <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</body>
+  </html>
